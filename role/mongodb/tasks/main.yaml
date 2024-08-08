@@ -11,3 +11,6 @@
     name: mongod
     enabled: yes
     state: started
+- name: printing sms
+  ansible.builtin.debug:
+   msg: "hai"
