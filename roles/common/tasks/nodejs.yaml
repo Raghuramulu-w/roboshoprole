@@ -1,0 +1,9 @@
+- name: disabling nodejs
+  ansible.buitin.service:
+    name: nodejs 
+    enabled: no
+- name: enabling nodejs
+  ansible.builtin.package:
+    name: nodejs
+    enabled: yes
+    state: started
