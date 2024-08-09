@@ -3,6 +3,7 @@
    src: mongo.repo
    dest: /etc/yum.repos.d/mongo.repo
    remote_src: yes
+      
 - name: install mongodb
   ansible.builtin.dnf:
    name: mongodb-org-shell
@@ -12,4 +13,4 @@
   register: product_count
 - name: pronting product count
   ansible.builtin.debug:
-   msg: "product count is product_count"
+   msg: "product count is {{product_count}}"
