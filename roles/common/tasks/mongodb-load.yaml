@@ -8,7 +8,7 @@
    state: present
 - name: get catagiries count
   ansible.builtin.shell: mongo --host mongodb.daws76s.fun  --quiet --eval 'db= db.getSiblingDB("catalogue"); db.products.count()'
-  register= product_count
+  register: product_count
 - name: pronting product count
   ansible.builtin.debug:
    msg: "product count is product_count"
