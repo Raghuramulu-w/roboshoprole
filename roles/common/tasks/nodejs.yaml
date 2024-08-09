@@ -6,4 +6,4 @@
   ansible.builtin.dnf:
     name: nodejs
     enabled: yes
-    state: started
+    state: present
