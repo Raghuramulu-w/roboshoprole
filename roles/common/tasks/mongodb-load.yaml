@@ -1,0 +1,14 @@
+- name: copying mongo repo
+  ansible.builtin.copy:
+   src: mongo.repo
+   dest: /etc/yum.repos.d/mongo.repo
+- name: install mongodb
+  ansible.builtin.dnf:
+   name: mongodb-org-shell
+   state: present
+- name: get catagiries count
+  ansible.builtin.shell: mongo --host mongodb.daws76s.fun  --quiet --eval 'db= db.getSiblingDB("catalogue"); db.products.count()'
+  register= product_count
+- name: pronting product count
+  ansible.builtin.debug:
+   msg: "product count is product_count"
