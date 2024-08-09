@@ -5,5 +5,4 @@
 - name: enabling and starting nodejs
   ansible.builtin.dnf:
     name: nodejs
-    enabled: yes
     state: present
