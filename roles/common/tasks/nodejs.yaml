@@ -1,7 +1,5 @@
 - name: disabling nodejs
-  ansible.buitin.service:
-    name: nodejs 
-    enabled: no
+  ansible.buitin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
 - name: enabling nodejs
   ansible.builtin.package:
     name: nodejs
